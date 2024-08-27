@@ -51,7 +51,7 @@ Proof. $\forall E \in \mathcal B$, $f^{-1}(E) = (f^{-1}(E) \cap A) \cup (f^{-1}(
 
 Proof. Suppose $\liminf \int f_n < \int f$. Then there is $c \in \mathbb R$ such that $\liminf \int f_n < c < \int f$. So we can choose a subsequence $\{f_{n_j}\}$ from $\{f_n\}$ such that $\lim f_{n_j} < c$. Because $\{f_{n_j}\}$ also converges to $f$ in measure, there is a subsequence $\{g_k\}$ of $\{f_{n_j}\}$ such that $\{g_k\} \rightarrow f$ a.e. Then we have $\int f \le \liminf \int g_k = \lim \int g_k < c$ by Fatou' lemma, which implies a contradiction.
 
-2.34. Suppose $|f_n| \le g \in L^1$ and $f_n \rightarrow f$ in measure.  
+2.34. Suppose $|f_n| \le g \in L^1$ and $f_n \rightarrow f$ in measure.
 	a. $\int f = \lim \int f_n.$
 	b. $f_n \rightarrow f$ in $L^1.$
 
