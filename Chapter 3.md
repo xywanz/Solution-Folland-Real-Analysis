@@ -54,7 +54,7 @@ $$
 
 Proof. 
 a. $\mu(E) = 0$ iff $E=\phi$, so $m \ll \mu$. Suppose there exists $f$ such that $dm = fd\mu$, then $\int_{[0,1]} f d\mu = \sum_{x \in [0,1]} f(x) = 1$, which implies there exists $a \in [0,1]$ such that $f(a) > 0$, and $m(\{a\}) = \int_{\{a\}} f d\mu = f(a) > 0$, contradicting $m(\{a\}) = 0$.
-b. If $\mu$ has a Lebesgue decomposition with respect to $m$, $d\mu = d\lambda + \rho$. Obviously, $\lambda \ne 0$. Then there exist $E, F$ such that $E \cup F = X, E \cap F = \phi, E$ is null for $m$ and $F$ is null for $\lambda$. $E$ is a $m$-null set, so $m(F) = 1$, so there is a countable subset $A$ of $F$ satisfying $\mu(A) = \rho(A)$. $\mu(A) = \infty$ but $\rho(A) = 0$ due to absolute continuity, which is a contradiction.
+b. If $\mu$ has a Lebesgue decomposition with respect to $m$, $d\mu = d\lambda + \rho$. Obviously, $\lambda \ne 0$. Then there exist $E, F$ such that $E \cup F = X, E \cap F = \phi, E$ is null for $m$ and $F$ is null for $\lambda.$ $E$ is a $m$-null set, so $m(F) = 1$, so there is a countable subset $A$ of $F$ satisfying $\mu(A) = \rho(A)$. $\mu(A) = \infty$ but $\rho(A) = 0$ due to absolute continuity, which is a contradiction.
 
 
 3.14. If $v$ is an arbitrary signed measure and $\mu$ is a $\sigma$-finite measure on $(X, \mathcal M)$ such that $v \ll \mu$, there exists and extended $\mu$-integrable function $f: X \to [-\infty, \infty]$ such that $dv = fd\mu$. Hints:

@@ -72,3 +72,32 @@ Proof. $\mu_E(\phi) = \mu(\phi) = 0$. $\mu_E(\bigcup F_j) = \mu((\bigcup F_j) \c
 
 
 1.3.11. A finitely additive measure $\mu$ is a measure iff it is continuous from below as in Theorem 1.8c. If $\mu(X) < \infty$, $\mu$ is a measure iff it is continuous from above as in Theorem 1.8d.
+
+Proof. Suppose $\{E_j\}_1^{\infty}$ are disjoint sets. Let $F_j = \bigcup_{i=1}^j E_i$, then $\{F_j\}$ is an increasing sequence. If finitely additive measure $\mu$ is continuous from below, then $\mu(\bigcup_1^{\infty} E_j) = \mu(\bigcup_1^{\infty} F_j) = \lim_{j \to \infty} \mu(F_j) = \lim_{j \to \infty} \sum_{i=1}^j \mu(E_i) = \sum_1^{\infty} \mu(E_j)$. Another proposition is the same.
+
+
+1.3.12. Let $(X,\mathcal M,\mu)$ be a finite measure space.
+	a. If $E,F \in \mathcal M$ and $\mu(E \triangle F) = 0$, then $\mu(E) = \mu(F)$.
+	b. Say that $E \sim F$ if $\mu(E \triangle F) = 0$; then $\sim$ is an equivalence relation on $\mathcal M$.
+	c. For $E,F \in \mathcal M$, define $\rho(E,F) = \mu(E \triangle F)$. Then $\rho(E,G) \le \rho(E,F) + \rho(F,G)$, and hence $\rho$ defines a metric on the space $\mathcal M / \sim$ of equivalence classes.
+
+Proof. 
+
+
+1.3.16. Let $(X, \mathcal M, \mu)$ be a measure space. A set $E \subseteq X$ is called locally measurable if $E \cap A \in \mathcal M$ for all $A \in \mathcal M$ such that $\mu(A) < \infty$. Let $\tilde{\mathcal M}$ be the collection of all locally measurable sets. Clearly $\mathcal M \subseteq \tilde{\mathcal M}$; if $\mathcal M = \tilde{\mathcal M}$, then $\mu$ is called saturated.
+	a. If $\mu$ is $\sigma$-finite, then $\mu$ is saturated.
+	b. $\tilde{\mathcal M}$ is a $\sigma$-algebra.
+	c. Define $\tilde \mu$ on $\tilde{\mathcal M}$ by $\tilde \mu(E) = \mu(E)$ if $E \in \mathcal M$ and $\tilde \mu(E) = \infty$ otherwise. Then $\tilde \mu$ is a saturated measure on $\tilde{\mathcal M}$, called the saturation of $\mu$.
+	d. If $\mu$ is complete, so is $\tilde \mu$.
+	e. Suppose that $\mu$ is semifinite. For $E \in \tilde{\mathcal M}$, define $\underline \mu(E) = \sup \{\mu(A): A \in \mathcal M \text{ and } A \subseteq E \}$. Then $\underline \mu$ is saturated measure on $\tilde{\mathcal M}$ that extends $\mu$.
+	f. Let $X_1,X_2$ be disjoint uncountable sets, $X = X_1 \cup X_2$, and $\mathcal M$ the $\sigma$-algebra of countable or co-countable sets in $X$. Let $\mu_0$ be counting measure on $\mathcal P(X_1)$, and define $\mu$ on $\mathcal M$ by $\mu(E) = \mu_0(E \cap X_1)$. Then $\mu$ is a measure on $\mathcal M$, $\tilde{\mathcal M} = \mathcal P(X)$, and in the notation of parts (c) and (e), $\tilde \mu \ne \underline \mu$.
+
+Proof.
+a. Let $\bigcup_1^{\infty} A_j \subseteq \mathcal M$ be a sequence of disjoint sets such that $\bigcup_1^{\infty} A_j = X$ and $\mu(A_j) < \infty$ for all $A_j$. Then for every $E \in \tilde{\mathcal M}$, $E \cap A_j \in \mathcal M$ for all $A_j$. So $E = \bigcap_1^{\infty} (E \cap A_j) \in \mathcal M$.
+b. Clearly, $\phi \in \tilde{\mathcal M}$. If $E \in \tilde{\mathcal M}$, then $E^c \cap A = A \setminus E = A \setminus (E \cap A) \in \mathcal M$ for all $A \in \mathcal M$ such that $\mu(A) < \infty$, thus $E^c \in \tilde{\mathcal M}$. $(\bigcup E_j) \cap A = \bigcup (E_j \cap A) \in \mathcal M$.  Therefore $\tilde{\mathcal M}$ is a $\sigma$-algebra.
+c. $\tilde \mu(\phi) = \mu(\phi) = 0$. If $A \in \mathcal M$ and there is a set $E$ such that $E \notin \mathcal M$ and $E \in \tilde{\mathcal M}$, then $\mu(A) = \infty$ because if $\mu(A) < \infty$, $E = E \cap A \in \mathcal M$. If there is a $E_i \in \tilde{\mathcal M}$ and $E_i \notin \mathcal M$, $\mu(\bigcup E_j) = \sum \mu(E_j) = \infty$ because $\bigcup E_j \in \mathcal M$ or $\bigcup E_j \in \tilde{\mathcal M} \setminus \mathcal M$. It's clearly true if $E_j \in \mathcal M$ for all $E_j$.
+d. If $\mu(E) = 0$, then $E \in \mathcal M$ by the definition of $\tilde \mu$, so $\tilde \mu$ is also complete.
+e. $\underline \mu$ is well defined since $\phi \subseteq E$ for all $E \in \tilde{\mathcal M}$. Clearly, $\underline \mu(\phi) = 0$ and $\underline \mu(E) = \mu(E)$ for all $E \in \mathcal M$. Suppose $\{E_j\}_1^{\infty} \subseteq \tilde{\mathcal M}$ is a sequence of disjoint sets. $\underline \mu(\bigcup E_j) = \sup \{ \mu(A): A \in \mathcal M \text{ and } A \subseteq \bigcup E_j \} = \sup \{ \sum \mu(A \cap E_j): A \in \mathcal M \text{ and } A \subseteq \bigcup E_j \}.$If some $\underline \mu(E_i) = \infty$, there is a set $A \in \mathcal M$ and $\mu(A) > C$ for every $C > 0$. So $\underline \mu(\bigcup E_j) = \infty = \sum \underline \mu(E_j)$. Consider $\underline \mu(E_j) < \infty$ for all $E_j$. $\underline \mu(\bigcup E_j) \le \sum \underline \mu(E_j)$ because $\mu(A \cap E_j) <= \underline \mu(E_j)$. For any $\epsilon > 0$, let $A_j \in \mathcal M$ such $A_j \subseteq E_j$ and $\mu(A_j) > \underline \mu(E_j) - 2^{-j}\epsilon.$Let $A = \bigcup A_j$. Then, $\sum \mu(A \cap E_j) = \sum \mu(A_j) >= \sum \underline \mu(E_j) - \epsilon$. Thus, $\underline \mu(\bigcup E_j) \ge \sum \underline \mu(E_j)$.
+f. Trivial.
+
+
