@@ -47,6 +47,33 @@ If $\{f_n\}$ are measurable complex-valued functions, then $lim f_n(x)$ exists i
 Proof. $\forall E \in \mathcal B$, $f^{-1}(E) = (f^{-1}(E) \cap A) \cup (f^{-1}(E) \cap B)$.
 
 
+2.32. Suppose $\mu(X) < \infty$. If $f$ and $g$ are complex-valued measurable functions on $X$, define$$\rho(f, g) = \int \frac{|f-g|}{1+|f-g|} d\mu$$Then $\rho$ is a metric on the space of measurable functions if we identify functions that are equal a.e., and $f_n \rightarrow f$ with respect to this metric iff $f_n \rightarrow f$ in measure.
+
+Proof. If $f$ and $g$ are measurable complex-valued functions, then $\rho(f,g) \le \int 1 d\mu = \mu(X) < \infty$.
+$\rho(f,g) = 0$ iff $\frac{|f-g|}{1+|f-g|} = 0$ a.e. iff $|f-g| = 0$ a.e. iff $f = g$ a.e.
+$\rho(f,g) = \rho(g,f)$ is obvious. 
+If $f$, $g$ and $h$ are measurable complex-valued functions, then
+$$\begin{aligned}
+\rho(f,h) &\le \int \frac{|f-g|+|g-h|}{1+|f-g|+|g-h|} d\mu \\
+&= \int \frac{|f-g|}{1+|f-g|+|g-h|} d\mu + \int \frac{|g-h|}{1+|f-g|+|g-h|} d\mu \\
+&\le \int \frac{|f-g|}{1+|f-g|} d\mu + \int \frac{|g-h|}{1+|g-h|} d\mu \\
+&= \rho(f,g) + \rho(g,h)
+\end{aligned}$$Thus $\rho$ is a metric on the space of measurable complex-valued functions.
+Let $E_{n,\delta} = \{x: |f_n(x) - f(x)| >= \delta\}$.
+If $f_n \rightarrow f$ in measure, then
+$$
+\begin{aligned}
+\int \frac{|f_n-f|}{1+|f_n-f|} d\mu &= \int_{E_{n,\delta}} \frac{|f_n-f|}{1+|f_n-f|} d\mu + \int_{E_{n,\delta}^c} \frac{|f_n-f|}{1+|f_n-f|} d\mu \\
+&\le \int_{E_{n,\delta}} d\mu + \delta \mu(X) \\
+&= \mu(E_{n,\delta}) + \delta \mu(X)
+\end{aligned}
+$$
+$\forall \epsilon > 0$, we can choose $\delta > 0$ and $N \in \mathbb N^+$ such that $\rho(f_n,f) < \epsilon$ whenever $n \ge N$. So $f_n \rightarrow f$ with respect to $\rho$.
+On the other side,
+$$\int \frac{|f_n-f|}{1+|f_n-f|} d\mu \ge \int_{E_{n,\epsilon}} \frac{|f_n-f|}{1+|f_n-f|} d\mu \ge \int_{E_{n,\epsilon}} \epsilon d\mu = \epsilon \mu(E_{n,\epsilon})$$
+$$\mu(E_{n,\epsilon}) \le \epsilon^{-1} \int \frac{|f_n-f|}{1+|f_n-f|} d\mu \rightarrow 0 \text{ as } n \rightarrow \infty$$
+
+
 2.33. If $f_n \ge 0$ and $f_n \rightarrow f$ in measure, then $\int f \le \liminf \int f_n.$
 
 Proof. Suppose $\liminf \int f_n < \int f$. Then there is $c \in \mathbb R$ such that $\liminf \int f_n < c < \int f$. So we can choose a subsequence $\{f_{n_j}\}$ from $\{f_n\}$ such that $\lim f_{n_j} < c$. Because $\{f_{n_j}\}$ also converges to $f$ in measure, there is a subsequence $\{g_k\}$ of $\{f_{n_j}\}$ such that $\{g_k\} \rightarrow f$ a.e. Then we have $\int f \le \liminf \int g_k = \lim \int g_k < c$ by Fatou' lemma, which implies a contradiction.
